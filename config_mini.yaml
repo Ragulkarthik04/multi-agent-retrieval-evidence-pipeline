@@ -1,0 +1,25 @@
+seed: 42
+
+data:
+  documents_path: ./data/mini_documents.jsonl      
+  questions_path: ./data/dev/mini_dev.json        
+  embeddings_npz: ./data/id_to_embedding.npz
+
+index:
+  output_dir: ./artifacts/index               
+
+retrieval:
+  use_sparse: true
+  use_dense: false
+  fusion: rrf
+  sparse_topk: 400
+  dense_topk: 400
+  final_topk: 200
+  rrf_k: 60
+
+run:
+  output_csv: ./artifacts/submission_mini.csv
+  supports_k: 50                                   
+  option_query_join: " "
+  temperature: 0.9
+  top_m_per_option: 10

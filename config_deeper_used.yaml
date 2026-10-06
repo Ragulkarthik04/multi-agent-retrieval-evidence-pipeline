@@ -1,0 +1,23 @@
+seed: 42
+data:
+  documents_path: ./data/documents.jsonl
+  questions_path: ./data/dev/dev.json
+  embeddings_npz: ./data/id_to_embedding.npz
+index:
+  output_dir: ./artifacts/index
+retrieval:
+  use_sparse: true
+  use_dense: false
+  fusion: rrf
+  dense_topk: 400
+  sparse_topk: 1000
+  final_topk: 400
+  rrf_k: 60
+run:
+  output_csv: ./artifacts/submission_dev_deeper_used.csv
+  supports_k: 100
+  option_query_join: " "
+  temperature: 0.6
+  top_m_per_option: 100    
+  token_weight: 1.5
+  phrase_bonus: 3.0
